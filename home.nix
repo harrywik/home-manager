@@ -36,7 +36,6 @@
     # '')
     htop
     zsh
-    vscode
     zplug
     meslo-lgs-nf
     bitwarden
@@ -44,8 +43,33 @@
     tree
   ]) ++ (with pkgs.gnomeExtensions; [
     # gnome extensions pkgs goes here
+  ]) ++ (with pkgs; [
+    vscode
   ]);
 
+  programs.vscode = {
+  	enable = true;
+	enableUpdateCheck = false;
+	enableExtensionUpdateCheck = false;
+	mutableExtensionsDir = false;
+
+	extensions = with pkgs.vscode-extensions; [
+		julialang.language-julia
+		ms-toolsai.jupyter
+		vscodevim.vim
+		dracula-theme.theme-dracula
+		tomoki1207.pdf
+		ms-python.black-formatter
+		ms-python.python
+	];
+	userSettings = {
+		"[python]" = {
+			"editor.defaultFormatter" = "ms-python.black-formatter";
+			"ediot.formatOnSave" = true;
+		};
+		"python.formatting.provider" = "black";
+	};
+  };
 
   programs.git = {
   	enable = true;
@@ -74,6 +98,17 @@
 		enabled-extensions = with pkgs.gnomeExtensions; [
 			# active gnome extensions goes here
 		];
+	};
+
+	"org/gnome/settings-daemon/plugins/media-keys" = {
+	    	custom-keybindings = [
+	      		"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/alacritty/"	
+		];
+	};
+	"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/alacritty" = {
+	    	binding = "<Ctrl><Alt>t"; 
+		command = "alacritty";
+	    	name = "open-terminal";
 	};
 
 	# then config gnome extension here
