@@ -18,33 +18,44 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = (with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+    # 
+    # Fonts
+    # 
+    meslo-lgs-nf
+  ]) ++ (with pkgs; [
+    #
+    # Terminal
+    #
     htop
     zsh
     zplug
-    meslo-lgs-nf
-    bitwarden
-    zoxide
     tree
-  ]) ++ (with pkgs.gnomeExtensions; [
-    # gnome extensions pkgs goes here
+    zoxide
   ]) ++ (with pkgs; [
+    #
+    # Secuirity
+    #
+    bitwarden
+  ]) ++ (with pkgs; [
+    #
+    # Messaging
+    #
+    signal-desktop
+  ]) ++ (with pkgs.gnomeExtensions; [
+    #
+    # gnome extensions pkgs goes here
+    #
+  ]) ++ (with pkgs; [
+    #
+    # Virtualization
+    #
+    distrobox
+  ]) ++ (with pkgs; [
+    #
+    # IDEs
+    #
     vscode
+    # neovim is installed systemwide
   ]);
 
   programs.vscode = {
@@ -62,12 +73,13 @@
 		ms-python.black-formatter
 		ms-python.python
 	];
+
 	userSettings = {
 		"[python]" = {
 			"editor.defaultFormatter" = "ms-python.black-formatter";
-			"ediot.formatOnSave" = true;
+			"editor.formatOnSave" = true;
 		};
-		"python.formatting.provider" = "black";
+		"notebook.formatOnSave.enabled" = true;
 	};
   };
 
@@ -125,8 +137,6 @@
   programs.zsh =  {
     enable = true;
     enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
     initExtra = ''
     set -o vi
     bindkey "''${key[Up]}" up-line-or-search
@@ -137,6 +147,7 @@
     	ll = "ls -l";
 	la = "ls -la";
 	cd = "z";
+	nxsh = "nix-shell --command zsh";
     };
 
     history = {
@@ -151,6 +162,12 @@
 			name = "dracula/zsh";
 			tags = [ "as:theme" "depth:1" ];
 	      	}
+		{
+			name = "zsh-users/zsh-syntax-highlighting";
+		}
+		{
+			name = "zsh-users/zsh-history-substring-search";
+		}
 	    ];
      };
   };
