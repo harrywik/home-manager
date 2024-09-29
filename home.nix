@@ -31,6 +31,7 @@
     zplug
     tree
     zoxide
+    pandoc
   ]) ++ (with pkgs; [
     #
     # Secuirity
