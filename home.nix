@@ -31,7 +31,6 @@
     zplug
     tree
     zoxide
-    pandoc
   ]) ++ (with pkgs; [
     #
     # Secuirity
@@ -51,6 +50,12 @@
     # Virtualization
     #
     distrobox
+  ]) ++ (with pkgs; [
+    # 
+    # LaTeX
+    #
+    pandoc
+    texliveTeTeX
   ]) ++ (with pkgs; [
     #
     # IDEs
