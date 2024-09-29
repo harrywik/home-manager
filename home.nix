@@ -55,7 +55,7 @@
     # LaTeX
     #
     pandoc
-    texliveTeTeX
+    texliveFull
   ]) ++ (with pkgs; [
     #
     # IDEs
