@@ -75,7 +75,7 @@
   	enable = true;
 	enableUpdateCheck = false;
 	enableExtensionUpdateCheck = false;
-	mutableExtensionsDir = false;
+	mutableExtensionsDir = true;
 
 	extensions = with pkgs.vscode-extensions; [
 		julialang.language-julia
