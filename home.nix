@@ -58,11 +58,18 @@
     texliveFull
   ]) ++ (with pkgs; [
     #
+    # Browsers
+    #
+    chromium
+  ]) ++ (with pkgs; [
+    #
     # IDEs
     #
     vscode
     # neovim is installed systemwide
   ]);
+	
+
 
   programs.vscode = {
   	enable = true;
@@ -78,6 +85,7 @@
 		tomoki1207.pdf
 		ms-python.black-formatter
 		ms-python.python
+
 	];
 
 	userSettings = {
@@ -158,7 +166,7 @@
 
     history = {
 	size = 10000;
-	path = "$config.xdg.dataHome}/zsh/history";
+	path = "${config.xdg.dataHome}/zsh/history";
     };
 
     zplug = {
