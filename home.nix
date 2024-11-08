@@ -75,7 +75,7 @@
   	enable = true;
 	enableUpdateCheck = false;
 	enableExtensionUpdateCheck = false;
-	mutableExtensionsDir = true;
+	mutableExtensionsDir = false;
 
 	extensions = with pkgs.vscode-extensions; [
 		julialang.language-julia
@@ -85,7 +85,13 @@
 		tomoki1207.pdf
 		ms-python.black-formatter
 		ms-python.python
-
+	] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+		{
+			name = "modelica";
+			publisher = "SimplyDanny";
+			version = "0.0.4";
+			sha256 = "sha256-rJ2OaEx/apI5OarNm5lKbNmsXZpqTbIFYYFHZUKy2Rg=";
+		}
 	];
 
 	userSettings = {
