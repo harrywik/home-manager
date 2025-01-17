@@ -16,13 +16,13 @@
 
   imports = [
   	./packages.nix
-	  ./modules/dconf.nix
-	  ./modules/dotfiles.nix
-	  ./modules/fonts.nix
-	  ./modules/git.nix
-	  ./modules/neovim.nix
-	  ./modules/sessionVariables.nix
-	  ./modules/vscode.nix
+	./modules/dconf.nix
+	./modules/dotfiles.nix
+	./modules/fonts.nix
+	./modules/git.nix
+	./modules/neovim.nix
+	./modules/sessionVariables.nix
+	./modules/vscode.nix
   	./modules/zsh.nix
   ];
 

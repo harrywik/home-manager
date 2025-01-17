@@ -21,16 +21,6 @@
 	      autocomplete.nvim-cmp.enable = true;
 	      vimAlias = true;
 	      viAlias = true;
-              languages = {
-                enableLSP = true;
-                enableTreesitter = true;
-                nix.enable = true;
-                ts.enable = true;
-                markdown.enable = true;
-                html.enable = true;
-                sql.enable = true;
-                python.enable = true;
-              };
 	};
       };
    };
