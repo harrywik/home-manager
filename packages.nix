@@ -75,6 +75,6 @@
     # Nix Development
     # devenv => system
   ]) ++ (with pkgs; [
-	nautilus
+	  nautilus
   ]);
 }
