@@ -24,12 +24,14 @@
         languages = {
           enableLSP = true;
           enableTreesitter = true;
+          enableFormat = true;
           nix.enable = true;
           ts.enable = true;
           markdown.enable = true;
           html.enable = true;
           sql.enable = true;
           python.enable = true;
+          rust.enable = true;
         };
         options = {
           backup = false;
