@@ -11,6 +11,7 @@
     enable = true;
     settings = {
     	vim = {
+        useSystemClipboard = true;
 	      theme = {
 			    enable = true; 
           name = "gruvbox";
