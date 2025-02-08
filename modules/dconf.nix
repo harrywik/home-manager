@@ -21,12 +21,12 @@
 
 	"org/gnome/settings-daemon/plugins/media-keys" = {
 	    	custom-keybindings = [
-	      		"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/alacritty/"	
+	      		"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ghostty/"	
 		];
 	};
-	"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/alacritty" = {
+	"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ghostty" = {
 	    	binding = "<Ctrl><Alt>t"; 
-		command = "alacritty";
+		    command = "ghostty";
 	    	name = "open-terminal";
 	};
 
