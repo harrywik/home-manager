@@ -37,10 +37,11 @@
     distrobox
   ]) ++ (with pkgs; [
     # 
-    # LaTeX
+    # LaTeX + PDF
     #
     pandoc
     texliveFull
+    kdePackages.okular
   ]) ++ (with pkgs; [
     #
     # Browsers

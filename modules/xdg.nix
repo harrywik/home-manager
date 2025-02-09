@@ -20,6 +20,8 @@
 			"application/xhtml+xml" = [ "firefox.desktop" ];
 			"application/x-extension-xhtml" = [ "firefox.desktop" ];
 			"application/x-extension-xht" = [ "firefox.desktop" ];
+      # PDF
+      "application/pdf" = [ "org.kde.okular.desktop" ];
     };
   };
   xdg.desktopEntries.feh = {
