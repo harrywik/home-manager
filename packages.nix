@@ -65,6 +65,8 @@
     # Audio and Images
     #
     gimp
+    vlc
+    feh
   ]) ++ (with pkgs; [
     # Inputs
     xorg.xinput

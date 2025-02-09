@@ -24,6 +24,7 @@
 	  ./modules/sessionVariables.nix
 	  ./modules/vscode.nix
   	./modules/zsh.nix
+    ./modules/xdg.nix
   ];
 
 

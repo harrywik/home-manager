@@ -7,7 +7,7 @@
 	};
 	"org/gnome/shell" = {
 		favorite-apps = [
-			"Alacritty.desktop"
+			"com.mitchellh.ghostty.desktop"
 			"firefox.desktop"
 			"bitwarden.desktop"
 			"code.desktop"
