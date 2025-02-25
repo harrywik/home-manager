@@ -14,6 +14,7 @@
       cd = "z";
 	    nxsh = "nix-shell --command zsh";
       ls = "eza --oneline --icons=auto --color=always";
+      cat = "bat";
     };
 
     history = {
